@@ -1,0 +1,19 @@
+environment: development
+
+apphost: k8s
+
+orders:
+  label:
+    name: aspnet3core
+
+  container:
+    name: aspnet3-orders
+    pullPolicy: Always
+    image: finalpetshopregistry.azurecr.io/petshoporders
+    tag: latest
+    port: 80
+  replicas: 2
+
+  service:
+    port: 8889
+    type: NodePort

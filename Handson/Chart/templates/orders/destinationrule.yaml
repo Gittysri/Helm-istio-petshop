@@ -1,0 +1,12 @@
+apiVersion: networking.istio.io/v1alpha3
+kind: DestinationRule
+metadata:
+  name: petshopdestinationrule
+  namespace: petshopdeploy
+spec:
+  host: petshop-stage-orders-service.petshopdeploy.svc.cluster.local
+  
+  subsets:
+    - name: petshop-stage
+      labels:
+        version: v1
